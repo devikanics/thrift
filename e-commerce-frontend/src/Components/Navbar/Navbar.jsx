@@ -8,20 +8,30 @@ import nav_dropdown from '../Assets/nav_dropdown.png'
 
 const Navbar = () => {
 
-  let [menu,setMenu] = useState("shop");
+  const [menu,setMenu] = useState("shop");
   const {getTotalCartItems} = useContext(ShopContext);
 
   const menuRef = useRef();
+  const searchInputRef = useRef(); 
+
 
   const dropdown_toggle = (e) => {
     menuRef.current.classList.toggle('nav-menu-visible');
     e.target.classList.toggle('open');
   }
+  const handleSearch = () => {
+    const searchTerm = searchInputRef.current.value.trim(); 
+    if (searchTerm) {
+      window.location.href = `/search?query=${encodeURIComponent(searchTerm)}`;
+    } else {
+      console.log("Search term is empty");
+    }
+  }
+
 
   return (
     <div className='nav'>
-      <Link to='/' onClick={()=>{setMenu("shop")}} style={{ textDecoration: 'none' }} className="nav-logo">
-        <img src={logo} alt="logo" />
+      <Link to='/' onClick={() => { setMenu("shop") }} style={{ textDecoration: 'none' }} className="nav-logo">
         <p>Thriftify</p>
       </Link>
       <img onClick={dropdown_toggle} className='nav-dropdown' src={nav_dropdown} alt="" />
@@ -31,6 +41,10 @@ const Navbar = () => {
         <li onClick={()=>{setMenu("womens")}}><Link to='/womens' style={{ textDecoration: 'none' }}>Women</Link>{menu==="womens"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("kids")}}><Link to='/kids' style={{ textDecoration: 'none' }}>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
       </ul>
+      <div className="nav-search">
+        <input ref={searchInputRef} type="text" placeholder="Search" />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')
         ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace("/");}}>Logout</button>
@@ -42,4 +56,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

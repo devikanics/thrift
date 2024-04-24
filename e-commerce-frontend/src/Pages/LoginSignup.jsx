@@ -55,6 +55,10 @@ const LoginSignup = () => {
         alert(dataObj.errors)
       }
   }
+  const sellerLogin = () => {
+    window.location.href = '/SellerLink'; // Redirect to SellerLink component
+  };
+
 
   return (
     <div className="loginsignup">
@@ -66,7 +70,8 @@ const LoginSignup = () => {
           <input type="password" placeholder="Password" name="password" value={formData.password} onChange={changeHandler}/>
         </div>
 
-        <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
+        <button onClick={()=>{state==="Login"?login():signup()}}>Continue as User</button>
+        <button onClick={sellerLogin}>Seller Login</button>
 
         {state==="Login"?
         <p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>

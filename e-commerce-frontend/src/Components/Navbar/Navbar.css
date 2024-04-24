@@ -83,6 +83,32 @@
 .nav-dropdown{
     display: none;
 }
+.nav-search input[type="text"] {
+    padding: 8px 12px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.nav-search input[type="text"]:focus {
+    border-color: #555;
+}
+
+.nav-search button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-search button:hover {
+    background-color: #333;
+}
 
 /* -------- media query---------- */
 @media(max-width:900px){
