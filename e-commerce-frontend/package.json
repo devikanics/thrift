@@ -10,6 +10,8 @@
     "course": "^0.0.1",
     "express": "^4.19.2",
     "gdown": "^1.0.6",
+    "mongo": "^0.1.0",
+    "mongodb": "^6.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
