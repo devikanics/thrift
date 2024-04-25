@@ -324,9 +324,13 @@ bow_title_vectorizer = CountVectorizer()
 bow_title_features = CountVectorizer().fit_transform(data['title'])
 bow_title_features.get_shape()
 
-def bag_of_words_model(doc_id, num_results):
+def bag_of_words_model(num_results):
     recommendations_list = []
-    # doc_id: apparel's id in given corpus
+    # Assuming you have already imported necessary libraries and defined necessary variables like bow_title_features, data, etc.
+
+    # Read doc_id from the CSV file
+    doc_id_df = pd.read_csv('doc_id.csv')
+    doc_id = doc_id_df['doc_id'].iloc[0]  # Assuming doc_id is in the first row of the CSV file
 
     # pairwise_dist will store the distance from given input apparel to all remaining apparels
     # the metric we used here is cosine, the cosine distance is mesured as K(X, Y) = <X, Y> / (||X||*||Y||)
@@ -354,9 +358,16 @@ def bag_of_words_model(doc_id, num_results):
             "Model": 'bag_of_words'
         }
         recommendations_list.append(recommendation)
-        
-        save_recommendations_to_js(recommendations_list)
-bag_of_words_model(12566, 20) # change the index if you want to.
+    
+    # Save recommendations to a JavaScript file
+    save_recommendations_to_js(recommendations_list)
+
+# Call the function with appropriate parameters
+bag_of_words_model(20)
+
+
+#call the bag-of-words model for a product to get similar products.
+#bag_of_words_model(12566, 20) # change the index if you want to.
 # In the output heat map each value represents the count value
 # of the label word, the color represents the intersection
 # with inputs title.

@@ -4,7 +4,6 @@ import Item from '../Item/Item';
 import recom from '../../rs';
 
 const RelatedProducts = () => {
-  console.log(recom)
   return (
     <div className='relatedproducts'>
       <h1>Related Products</h1>
@@ -12,7 +11,6 @@ const RelatedProducts = () => {
       <div className="relatedproducts-items">
         {recom.map((item, index) => (
           <Item
-            className="item"
             key={index} // Adding a unique key for each item
             BRAND={item.BRAND}
             Title={item.Title}
