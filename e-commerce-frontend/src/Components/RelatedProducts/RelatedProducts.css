@@ -1,55 +1,27 @@
+/* Container for the related products section */
 .relatedproducts {
-    margin: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .relatedproducts h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .relatedproducts hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin-bottom: 20px;
-  }
-  
-  .relatedproducts-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .item {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .item img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  .item-details {
-    margin-top: 10px;
-  }
-  
-  .item-brand {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .item-title {
-    margin-top: 5px;
-    font-size: 16px;
-    color: #333;
-  }
-  
+  padding: 20px;
+}
+
+/* Heading for the related products section */
+.relatedproducts h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Horizontal line below the heading */
+.relatedproducts hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* Container for the related products items */
+.relatedproducts-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
