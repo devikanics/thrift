@@ -6,16 +6,20 @@ import recom from '../../rs';
 const RelatedProducts = () => {
   return (
     <div className='relatedproducts'>
+
       <h1>Related Products</h1>
       <hr />
       <div className="relatedproducts-items">
         {recom.map((item, index) => (
           <Item
-            key={index} // Adding a unique key for each item
-            BRAND={item.BRAND}
-            Title={item.Title}
-            Image_URL={item.Image_URL}
-          />
+          className="item"
+          key={index}
+          id={item.id} 
+          image={item.Image_URL} 
+          name={item.Title} 
+          new_price={item.new_price} 
+          old_price={item.old_price} 
+        />
         ))}
       </div>
     </div>

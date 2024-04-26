@@ -1,46 +1,62 @@
-.item{
-    width: 21%;
-}
-.item img{
-    width: 100%;
-}
-.item p{
-    margin: 6px 0px;
-}
-.item-prices{
+/* General styles for item */
+.item {
+    width: 30%;
+  }
+  
+  /* Image styles */
+  .item img {
+    width: 50%;
+  }
+  
+  /* Paragraph styles */
+  .item p {
+    margin: 6px 0;
+  }
+  
+  /* Price container styles */
+  .item-prices {
     display: flex;
     gap: 15px;
-}
-.item-price-new{
+  }
+  
+  /* New price styles */
+  .item-price-new {
     color: #374151;
     font-size: 18px;
     font-weight: 600;
-}
-.item-price-old{
+  }
+  
+  /* Old price styles */
+  .item-price-old {
     color: #8c8c8c;
     font-size: 18px;
     font-weight: 500;
     text-decoration: line-through;
-}
-.item:hover{
+  }
+  
+  /* Hover effect */
+  .item:hover {
     transform: scale(1.05);
-    transition: 0.6s;
-}
-
-
-@media(max-width:800px){
-    .item{
-        width: 35%;
+    transition: transform 0.6s;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 800px) {
+    /* Adjust width for smaller screens */
+    .item {
+      width: 35%;
     }
-    .item-price-old{
-        font-size: 12px;
+  
+    /* Decrease font size for old price */
+    .item-price-old {
+      font-size: 12px;
     }
-}
-@media(max-width:500px){
-    .item p{
-        font-size: 14px;
+  }
+  
+  @media (max-width: 500px) {
+    /* Decrease font size for paragraph and new price */
+    .item p, .item-price-new {
+      font-size: 14px;
     }
-    .item-price-new{
-        font-size: 14px;
-    }
-}
+  }
+  
